@@ -2,10 +2,10 @@ namespace: Integrations.LoveCalculator
 flow:
   name: getPercentageMatch
   inputs:
-    - XMashapUrl: 'https://love-calculator.p.mashape.com'
-    - XMashapeKey: 6F8xZgBPPnmshFaZ9hZTmG4ABCxKp1XK21AjsnPVyTT22EaLvk
-    - fname: Michael
-    - sname: Guillaume
+    - XMashapUrl: '${XMashapUrl}'
+    - XMashapeKey: '${XMashapeKey}'
+    - fname: '${fname}'
+    - sname: '${sname}'
   workflow:
     - getPercentageMatch:
         do:
