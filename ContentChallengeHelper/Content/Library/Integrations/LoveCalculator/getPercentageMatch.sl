@@ -1,4 +1,4 @@
-namespace: ContentChallengeIntegrations.LoveCalculator
+namespace: Integrations.LoveCalculator
 flow:
   name: getPercentageMatch
   inputs:
