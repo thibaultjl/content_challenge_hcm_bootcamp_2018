@@ -42,7 +42,7 @@ flow:
     - append:
         do:
           io.cloudslang.base.strings.append:
-            - origin_string: '${"Your percentage match is" + percentageMatch + " then "}'
+            - origin_string: '${fname + " and " + sname + ", your percentage match is " + percentageMatch + " % then "}'
             - text: '${resultMatch}'
         publish:
           - messageToPost: '${new_string}'
