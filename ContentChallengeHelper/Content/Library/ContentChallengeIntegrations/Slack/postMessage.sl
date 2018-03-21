@@ -1,4 +1,4 @@
-namespace: Integrations.Slack
+namespace: ContentChallengeIntegrations.Slack
 flow:
   name: postMessage
   inputs:

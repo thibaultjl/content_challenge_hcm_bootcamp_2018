@@ -4,11 +4,11 @@ flow:
   inputs:
     - fname: HPE
     - sname: MICROFOCUS
-    - XMashapeKey: 6F8xZgBPPnmshFaZ9hZTmG4ABCxKp1XK21AjsnPVyTT22EaLvk
+    - XMashapeKey: AEzXixt7XhmshnwhBQ15O2OlWwiip1MaDbQjsnmafSYpdmmGWD
     - XMashapeURL: 'https://love-calculator.p.mashape.com'
     - slackURL: 'https://slack.com/api/chat.postMessage'
-    - slackChannel: schlumberger
-    - slackToken: xoxp-200103613542-200103613574-309691159907-7c6ea5eff69b19c3462000496e6d9d76
+    - slackChannel: test
+    - slackToken: xoxb-334563548982-OS5qJiXioLlWME4UVNUB55xg
   workflow:
     - getPercentageMatch:
         do:
@@ -18,8 +18,7 @@ flow:
             - fname: '${fname}'
             - sname: '${sname}'
         publish:
-          - resultMatch: '${result}'
-          - percentageMatch: '${percentage}'
+          - messageToPost
         navigate:
           - FAILURE: on_failure
           - SUCCESS: postMessage
@@ -29,7 +28,7 @@ flow:
             - slackURL: '${slackURL}'
             - slackChannel: '${slackChannel}'
             - slackToken: '${slackToken}'
-            - slackMessageToPost: '${fname + " and " + sname +" your percentage match is " + percentageMatch + " then " + resultMatch}'
+            - slackMessageToPost: '${messageToPost}'
             - attachments: '[]'
         navigate:
           - SUCCESS: SUCCESS
@@ -42,7 +41,7 @@ extensions:
     steps:
       getPercentageMatch:
         x: 98
-        y: 154
+        y: 155
       postMessage:
         x: 280
         y: 149
